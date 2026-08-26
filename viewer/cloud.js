@@ -542,7 +542,9 @@
         // The small one first so the building appears in about a second, then
         // the real one underneath it. Waiting six megabytes to see anything is
         // how a map gets called broken.
-        var near = await CC.fetch(view.near || '/assets/house/cloud/hof-near.bin');
+        // `view.near` is optional: without it the full file loads on its own
+        // and the building simply takes longer to appear.
+        var near = await CC.fetch(view.near || view.url);
         if (!alive) return;
         viewer.load(near); viewer.frame(); mark(); loop();
         note.textContent = 'Sharpening…';
