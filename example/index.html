@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>commons-spatial</title>
+<style>
+  :root{--ink:#EDE7D7;--dim:#9AA79C;--line:rgba(237,231,215,.14)}
+  *{box-sizing:border-box}
+  body{margin:0;background:#060A07;color:var(--ink);
+    font:15px/1.5 ui-sans-serif,system-ui,-apple-system,sans-serif}
+  header{padding:18px 20px;border-bottom:1px solid var(--line)}
+  h1{margin:0;font-size:1.1rem;font-weight:500}
+  p{margin:6px 0 0;color:var(--dim);font-size:.86rem}
+  .wrap{position:relative;margin:16px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  canvas{display:block;width:100%;height:min(70vh,620px);background:#060A07;touch-action:none;cursor:grab}
+  canvas:active{cursor:grabbing}
+  .layer{position:absolute;inset:0;pointer-events:none}
+  .pin{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer;
+    display:flex;align-items:center;gap:6px;padding:4px 9px 4px 5px;border-radius:99px;
+    border:1px solid rgba(245,185,90,.55);background:rgba(6,10,7,.82);color:var(--ink);
+    font:500 11px/1 ui-monospace,monospace;letter-spacing:.06em;white-space:nowrap}
+  .pin i{width:7px;height:7px;border-radius:50%;background:#F5B95A;font-style:normal}
+  .note{position:absolute;left:12px;top:12px;padding:6px 10px;border-radius:99px;
+    background:rgba(6,10,7,.8);color:var(--dim);font:500 11px/1 ui-monospace,monospace}
+  .bar{display:flex;flex-wrap:wrap;gap:8px;margin:0 16px 16px}
+  button{font:500 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;
+    padding:8px 13px;border-radius:99px;border:1px solid var(--line);
+    background:none;color:var(--dim);cursor:pointer}
+  button:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<header>
+  <h1>commons-spatial</h1>
+  <p>Drag to turn, scroll to zoom, shift-drag to move. Click the building to drop a pin.</p>
+</header>
+
+<div class="wrap">
+  <canvas id="c"></canvas>
+  <div class="layer" id="pins"></div>
+  <div class="note" id="note">loading…</div>
+</div>
+<div class="bar">
+  <button id="home">back out</button>
+  <button id="clear">clear pins</button>
+</div>
+
+<script src="../viewer/cloud.js"></script>
+<script src="./demo.js"></script>
+</body>
+</html>
