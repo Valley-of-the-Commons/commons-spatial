@@ -74,6 +74,10 @@ nobody checked, dashed is an open question.
 
 The one after it is the same machine as a flow of power, signal and air.
 
+If what you actually want to know is *can we run our data and our own language
+model on this*, that question has its own page:
+**[Can it be our data and AI server?](can-it-be-our-ai-server.md)**
+
 ```mermaid
 flowchart TB
     subgraph RACK["The rack · one slot of many"]
@@ -311,7 +315,9 @@ bulk storage box and a good archive one, and somebody in the room said the
 useful thing out loud: *it is Markdown files.* For a text archive four
 terabytes is enormous. The limit only bites for media or heavy relational data.
 
-Listed so two people do not build the same half.
+Listed so two people do not build the same half. Costs, arithmetic and the four
+ways to go are worked through in
+[Can it be our data and AI server?](can-it-be-our-ai-server.md).
 
 - **The thing the valley stops renting.** Everything currently depends on an
   uplink to a hosted database and an edge network. A machine in the building is

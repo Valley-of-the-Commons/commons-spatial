@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 596" width="1020" height="596"
+     font-family="ui-monospace, SFMono-Regular, Menlo, monospace" role="img"
+     aria-label="Audit verdict: the machine is ready as a data server and one card away from being an AI server">
+  <title>Two questions, not one</title>
+  <rect width="1020" height="596" fill="#060A07"/>
+
+  <text x="34" y="42" font-size="17" letter-spacing="0.3" fill="#EDE7D7">Two questions, not one</text>
+  <text x="34" y="62" font-size="9" letter-spacing="0.7" fill="#9AA79C">CLAUDIA'S AUDIT READ · 27 AUG 2026 · A DRAFT WITH REASONS, NOT A FINDING</text>
+
+  <!-- ── LEFT: data ───────────────────────────────────────── -->
+  <rect x="34" y="92" width="460" height="248" rx="6" fill="#0e1a15" stroke="#6FD9A2" stroke-width="1.5"/>
+  <text x="56" y="122" font-size="9"  letter-spacing="0.7" fill="#9AA79C">AS A DATA SERVER</text>
+  <text x="56" y="156" font-size="23" letter-spacing="0.2" fill="#6FD9A2">READY NOW</text>
+  <path d="M56 176 H472" stroke="#6FD9A2" stroke-width="1" opacity="0.35"/>
+  <g font-size="10" letter-spacing="0.5" fill="#EDE7D7">
+    <text x="56" y="204">EIGHT DRIVE BAYS, ALREADY IN THE BUILDING</text>
+    <text x="56" y="228">EIGHTEEN MEMORY SLOTS, AND THAT MEMORY IS CHEAP</text>
+    <text x="56" y="252">ERROR-CORRECTING, BUILT TO STAY SWITCHED ON</text>
+    <text x="56" y="276">AN SSD GOES IN THE DVD'S SATA PORT. NO NEW PARTS</text>
+  </g>
+  <text x="56" y="318" font-size="9" letter-spacing="0.7" fill="#6FD9A2">THIS IS THE HALF THAT LETS THE VALLEY STOP RENTING</text>
+
+  <!-- ── RIGHT: ai ────────────────────────────────────────── -->
+  <rect x="526" y="92" width="460" height="248" rx="6" fill="#181206" stroke="#F5B95A" stroke-width="1.5"/>
+  <text x="548" y="122" font-size="9"  letter-spacing="0.7" fill="#9AA79C">AS AN AI SERVER, ON ITS OWN</text>
+  <text x="548" y="156" font-size="23" letter-spacing="0.2" fill="#F5B95A">TOO SLOW TO SIT IN FRONT OF</text>
+  <path d="M548 176 H964" stroke="#F5B95A" stroke-width="1" opacity="0.35"/>
+
+  <rect x="548" y="192" width="416" height="62" rx="4" fill="#0d1310" stroke="#5c6660" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="564" y="214" font-size="9"  letter-spacing="0.7" fill="#9AA79C">SPEED IS A DIVISION, NOT A MYSTERY</text>
+  <text x="564" y="238" font-size="12" letter-spacing="0.3" fill="#EDE7D7">~20 GB/s  ÷  4 GB MODEL  ≈  5 WORDS / SEC</text>
+
+  <g font-size="10" letter-spacing="0.5" fill="#EDE7D7">
+    <text x="548" y="280">THESE CHIPS PREDATE AVX, SO IT IS SLOWER STILL</text>
+    <text x="548" y="302">A SECOND SOCKET DOES NOT FIX IT</text>
+  </g>
+  <text x="548" y="326" font-size="9" letter-spacing="0.7" fill="#F5B95A">BUT ONE 50 W CARD IN THE RISER CHANGES THIS ENTIRELY</text>
+
+  <!-- ── the gate ─────────────────────────────────────────── -->
+  <rect x="34" y="356" width="952" height="44" rx="6" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="56" y="374" font-size="9" letter-spacing="0.7" fill="#9AA79C">THE WHOLE AI QUESTION COLLAPSES TO ONE THING NOBODY HAS CHECKED</text>
+  <text x="56" y="391" font-size="10" letter-spacing="0.4" fill="#EDE7D7">THE POWER SUPPLY HAS NO CABLE FOR A GRAPHICS CARD. A CARD MAY ONLY DRAW THE 75 W THE SLOT GIVES.</text>
+
+  <!-- ── options ──────────────────────────────────────────── -->
+  <text x="34" y="432" font-size="12" letter-spacing="2.1" fill="#9AA79C">FOUR WAYS TO GO · A IS WORTH DOING WHATEVER WE DECIDE ABOUT THE REST</text>
+
+  <g>
+    <rect x="34" y="444" width="220" height="116" rx="5" fill="#0e1a15" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="50" y="468" font-size="11" letter-spacing="0.5" fill="#6FD9A2">A · TURN IT ON</text>
+    <text x="50" y="490" font-size="14" letter-spacing="0.2" fill="#EDE7D7">nothing</text>
+    <text x="50" y="510" font-size="9" letter-spacing="0.7" fill="#9AA79C">AN AFTERNOON</text>
+    <text x="50" y="534" font-size="9" letter-spacing="0.7" fill="#9AA79C">THE DATABASE, THE FILES,</text>
+    <text x="50" y="548" font-size="9" letter-spacing="0.7" fill="#9AA79C">THE ARCHIVE, ALL LOCAL</text>
+  </g>
+  <g>
+    <rect x="278" y="444" width="220" height="116" rx="5" fill="#0e1a15" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="294" y="468" font-size="11" letter-spacing="0.5" fill="#6FD9A2">B · FILL THE MEMORY</text>
+    <text x="294" y="490" font-size="14" letter-spacing="0.2" fill="#EDE7D7">€100–150</text>
+    <text x="294" y="510" font-size="9" letter-spacing="0.7" fill="#9AA79C">AN HOUR, WITH A STRAP</text>
+    <text x="294" y="534" font-size="9" letter-spacing="0.7" fill="#9AA79C">NOT A FASTER MODEL, BUT</text>
+    <text x="294" y="548" font-size="9" letter-spacing="0.7" fill="#9AA79C">A FAST ARCHIVE SEARCH</text>
+  </g>
+  <g>
+    <rect x="522" y="444" width="220" height="116" rx="5" fill="#181206" stroke="#F5B95A" stroke-width="1.5"/>
+    <text x="538" y="468" font-size="11" letter-spacing="0.5" fill="#F5B95A">C · ONE 50 W CARD</text>
+    <text x="538" y="490" font-size="14" letter-spacing="0.2" fill="#EDE7D7">€80–120</text>
+    <text x="538" y="510" font-size="9" letter-spacing="0.7" fill="#9AA79C">A WEEKEND. MAY FAIL</text>
+    <text x="538" y="534" font-size="9" letter-spacing="0.7" fill="#9AA79C">THE EXPERIMENT THAT ENDS</text>
+    <text x="538" y="548" font-size="9" letter-spacing="0.7" fill="#9AA79C">THE AI ARGUMENT FOR GOOD</text>
+  </g>
+  <g>
+    <rect x="766" y="444" width="220" height="116" rx="5" fill="#0d1310" stroke="#A594E8" stroke-width="1.5"/>
+    <text x="782" y="468" font-size="11" letter-spacing="0.5" fill="#A594E8">D · A SMALL NEW BOX</text>
+    <text x="782" y="490" font-size="14" letter-spacing="0.2" fill="#EDE7D7">€400–700</text>
+    <text x="782" y="510" font-size="9" letter-spacing="0.7" fill="#9AA79C">IT SIMPLY WORKS</text>
+    <text x="782" y="534" font-size="9" letter-spacing="0.7" fill="#9AA79C">PROBABLY TRUE: IT BEATS</text>
+    <text x="782" y="548" font-size="9" letter-spacing="0.7" fill="#9AA79C">ANY HACK ON THIS SERVER</text>
+  </g>
+
+  <text x="34" y="586" font-size="9" letter-spacing="0.7" fill="#9AA79C">EDIT THIS FILE · tech-track/server-verdict.svg · WRITTEN WITH THE TECH TRACK, NOT FOR IT</text>
+</svg>
