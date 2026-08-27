@@ -65,6 +65,15 @@ a rack with other machines stacked above and below. 🟡
 
 ## The machine
 
+Two drawings. The one below is the physical layout, drawn to scale-ish and
+meant to be edited: [`server-layout.svg`](server-layout.svg). Solid outlines
+are things visible in the recordings, amber is something someone said but
+nobody checked, dashed is an open question.
+
+![Top-down and front layout of the server](server-layout.svg)
+
+The one after it is the same machine as a flow of power, signal and air.
+
 ```mermaid
 flowchart TB
     subgraph RACK["The rack · one slot of many"]
@@ -179,6 +188,24 @@ Everything that computes or carries data.
   needing only eight does not waste the rest
 - 🟡 Everything extra attaches by **PCIe or SATA**
 
+### The riser bay 🟡
+
+A riser turns one slot on the board into several, angled so the cards lie flat
+in a 2U chassis. Whoever built this machine used that room for **more ethernet
+rather than a graphics card**, which is a choice worth noticing: it was set up
+to move traffic, not to compute on the GPU.
+
+- 🟡 Extra ethernet cards on a riser, added, not onboard
+- 🟡 An onboard display adapter, which Bryan dismissed on sight as old and weak.
+  For anyone hoping to run models here: the video that comes with the board is
+  not the video you would use. A real GPU would go in the riser
+- ❓ **A Dell card whose cabling seems to run to the disk arrays.** Bryan's best
+  reading is a storage controller. He asked Jeff directly, at the table, and
+  got no answer. This is the single most useful unknown in the machine, because
+  a RAID controller decides how the eight bays behave
+- ❓ Something reading **"security PIM"**. Nobody in the room could name it
+- ❓ How many riser slots are free
+
 ## 3. Cooling 🟡
 
 The part that makes a server look like a server.
@@ -190,6 +217,74 @@ The part that makes a server look like a server.
 - ❓ We do not have a cooled room. Where this machine lives, and how loud it is
   where it lives, is an open question and probably the first practical one
 - 🟡 Water cooling is the alternative: a block that moves heat into flowing water
+
+---
+
+## Which machine is it, probably 🟡
+
+Nobody has read the label yet, so this is a reading of the machine from the
+recordings alone. It is a guess with reasons attached, and it is written down
+so someone can knock it over in thirty seconds.
+
+**The tell is the memory slots.** Bryan reads them out loud: `A1 A2 A3`,
+`A4 A5 A6`, `A7 A8 A9`, and then a second bank starting at `B`. Nine per
+processor, in groups of three, across two processors. Eighteen slots.
+
+That layout is not a general server pattern, it is a specific one. Three
+memory channels per processor, three slots per channel, two sockets. Intel
+built desktop and server chips that way for a fairly short window, and on the
+server side that means the Xeon 5500 and 5600 families, on the socket called
+LGA1366, sold roughly between 2009 and 2012. 🟡
+
+Everything else in the recordings sits comfortably on top of that:
+
+| What was seen | What it narrows |
+|---|---|
+| Eight hot-swap bays, small SAS disks | 2U chassis, 2.5" backplane |
+| A **Dell** card on the riser, cabled toward the disks | a Dell PERC RAID controller |
+| Broadcom network chips on the board | standard for Dell of that period |
+| Onboard video described as old and weak | matched to a service processor, not to graphics |
+| A DVD drive on SATA | front-panel optical bay |
+
+Put together, the machine that fits best is a **Dell PowerEdge R710**, or its
+1U sibling the R610 if the bay count turns out to be six rather than eight. ❓
+
+**This also settles the argument about disk size.** Bryan says the modern
+8 TB drives are "56 times bigger than this," and somebody else reads "500" off
+a label. Those two do not agree. But 8 TB divided by 56 is about 143 GB, and
+**146 GB was the ordinary SAS disk sold in these machines.** So the arithmetic
+and the platform point the same way, and the "500" is most likely off a
+different label on a different drive. Nothing here is settled until someone
+reads eight labels and writes down eight numbers.
+
+### How to knock this over
+
+Two ways, both cheap, either one ends the guessing:
+
+1. **Pull the tag.** On the front, usually near the bays, there is a small
+   plastic card that slides out. It carries a service tag. That tag names the
+   exact machine, and on Dell's site it names the parts it shipped with.
+2. **Ask the machine.** If it boots to anything Linux, `sudo dmidecode -t
+   system -t processor -t memory` prints the model, the processors and every
+   populated slot without opening the lid.
+
+If the answer is different from what is written above, change this section and
+say who checked. That is the whole point of writing the guess down.
+
+### If it is an R710, what follows
+
+Not conclusions, just the things that would then be worth planning around. 🟡
+
+- The memory is DDR3 and registered, which is old but cheap secondhand. Filling
+  eighteen slots is unusually affordable on this platform.
+- Two Xeons of that era are still perfectly good at serving files, running
+  databases and holding an archive. They are slow at anything a modern GPU
+  would do.
+- It draws real power and makes real noise even when idle. That is a room
+  question before it is a computing question, and the cooling section already
+  flags that we do not have the room these were built for.
+- A GPU is possible in the riser but constrained by the 2U height and by what
+  the PSU will give. Worth measuring before anybody buys a card.
 
 ---
 
@@ -245,5 +340,7 @@ The recordings live in the Hub:
 3. **Bryan on handling RAM, the network chips, and PCIe** — 1:20
 4. **Bryan on PCIe lanes, SATA, and finding the disk backplane** — 2:37
 5. **Bryan counts the drive bays: eight, and what that is good for** — 0:44
+6. **Bryan at the riser: extra ethernet, a weak display adapter, and one card
+   nobody can name** — 1:03
 
 *Started 27 Aug 2026 from Bryan's walk-around, at the tech track.*

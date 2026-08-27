@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 682" width="1020" height="682"
+     font-family="ui-monospace, SFMono-Regular, Menlo, monospace" role="img"
+     aria-label="Top-down and front layout of the Hub server, inferred from the walk-around recordings">
+  <title>The Hub server, as far as we know it</title>
+  <desc>Inferred layout. Solid outlines are things seen on camera; dashed outlines are unknown or unread.</desc>
+
+
+  <rect width="1020" height="682" fill="#060A07"/>
+
+  <text x="34" y="42" font-size="17" letter-spacing="0.3" fill="#EDE7D7">The Hub server, as far as we know it</text>
+  <text x="34" y="62" font-size="9" letter-spacing="0.7" fill="#9AA79C">INFERRED FROM SIX RECORDINGS · NOTHING HERE HAS BEEN VERIFIED WITH THE LID OFF</text>
+
+  <!-- ─── legend ─────────────────────────────────────────────── -->
+  <g transform="translate(34,84)">
+    <rect x="0"   y="0" width="13" height="13" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="20"  y="11" font-size="9" letter-spacing="0.7" fill="#9AA79C">SEEN ON CAMERA</text>
+    <rect x="150" y="0" width="13" height="13" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+    <text x="170" y="11" font-size="9" letter-spacing="0.7" fill="#9AA79C">STATED, UNVERIFIED</text>
+    <rect x="320" y="0" width="13" height="13" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="340" y="11" font-size="9" letter-spacing="0.7" fill="#9AA79C">UNKNOWN OR UNREAD</text>
+    <rect x="500" y="0" width="13" height="13" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+    <text x="520" y="11" font-size="9" letter-spacing="0.7" fill="#9AA79C">COOLING / AIRFLOW</text>
+  </g>
+
+  <!-- ═══ TOP DOWN ═══════════════════════════════════════════════ -->
+  <text x="34" y="140" font-size="12" letter-spacing="2.1" fill="#9AA79C">TOP DOWN · AIR RUNS FRONT TO BACK</text>
+
+  <rect x="34" y="152" width="952" height="330" rx="6" fill="#0d1310" stroke="#3a4440" stroke-width="1.5"/>
+  <text x="46" y="172" font-size="9" letter-spacing="0.7" fill="#9AA79C">FRONT</text>
+  <text x="934" y="172" font-size="9" letter-spacing="0.7" fill="#9AA79C">REAR</text>
+
+  <!-- drive bays -->
+  <g transform="translate(50,186)">
+    <text x="0" y="-4" font-size="9" letter-spacing="0.7" fill="#9AA79C">8 SAS BAYS</text>
+    <g>
+      <rect x="0"  y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="34" y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+      <rect x="68" y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="102" y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    </g>
+    <g transform="translate(0,110)">
+      <rect x="0"  y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="34" y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+      <rect x="68" y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="102" y="4" width="30" height="100" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    </g>
+    <text x="0" y="230" font-size="9" letter-spacing="0.7" fill="#9AA79C">146 GB? 500 GB?</text>
+    <text x="0" y="244" font-size="9" letter-spacing="0.7" fill="#9AA79C">GO READ A LABEL</text>
+  </g>
+
+  <!-- backplane -->
+  <rect x="196" y="190" width="16" height="214" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+  <text x="0" y="0" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle" transform="translate(208,297) rotate(-90)">BACKPLANE</text>
+
+  <!-- optical -->
+  <rect x="50" y="428" width="132" height="0" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- fan wall -->
+  <g transform="translate(228,190)">
+    <text x="0" y="-8" font-size="9" letter-spacing="0.7" fill="#9AA79C">FAN WALL</text>
+    <g>
+      <circle cx="18" cy="26"  r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/><circle cx="18" cy="66"  r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+      <circle cx="18" cy="106" r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/><circle cx="18" cy="146" r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+      <circle cx="18" cy="186" r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+      <circle cx="52" cy="26"  r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/><circle cx="52" cy="66"  r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+      <circle cx="52" cy="106" r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/><circle cx="52" cy="146" r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+      <circle cx="52" cy="186" r="15" fill="#141024" stroke="#A594E8" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- airflow -->
+
+  <!-- motherboard -->
+  <rect x="330" y="186" width="470" height="236" rx="4" fill="#0f1512" stroke="#3a4440" stroke-width="1.5"/>
+  <text x="338" y="180" font-size="9" letter-spacing="0.7" fill="#9AA79C">MOTHERBOARD</text>
+
+  <!-- CPU 1 + its 9 DIMMs -->
+  <g transform="translate(350,200)">
+    <rect x="0" y="0" width="66" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+    <text x="33" y="30" font-size="11" letter-spacing="0.6" fill="#EDE7D7" text-anchor="middle">CPU</text>
+    <text x="33" y="46" font-size="9" letter-spacing="0.7" fill="#9AA79C"  text-anchor="middle">1</text>
+    <g transform="translate(76,0)">
+      <rect x="0"  y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/><rect x="10" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="20" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="34" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/><rect x="44" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="54" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="68" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/><rect x="78" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="88" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <text x="13" y="80" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">A1-3</text>
+      <text x="47" y="80" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">A4-6</text>
+      <text x="81" y="80" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">A7-9</text>
+    </g>
+  </g>
+
+  <!-- CPU 2 + its 9 DIMMs -->
+  <g transform="translate(350,320)">
+    <rect x="0" y="0" width="66" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+    <text x="33" y="30" font-size="11" letter-spacing="0.6" fill="#EDE7D7" text-anchor="middle">CPU</text>
+    <text x="33" y="46" font-size="9" letter-spacing="0.7" fill="#9AA79C"  text-anchor="middle">2</text>
+    <g transform="translate(76,0)">
+      <rect x="0"  y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/><rect x="10" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="20" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="34" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/><rect x="44" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="54" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="68" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/><rect x="78" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <rect x="88" y="0" width="7" height="66" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+      <text x="13" y="80" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">B1-3</text>
+      <text x="47" y="80" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">B4-6</text>
+      <text x="81" y="80" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">B7-9</text>
+    </g>
+  </g>
+
+  <text x="350" y="414" font-size="9" letter-spacing="0.7" fill="#9AA79C">3 CHANNELS x 3 DIMMS x 2 SOCKETS = 18 SLOTS. THAT NUMBER IS THE CLUE.</text>
+
+  <!-- risers -->
+  <g transform="translate(618,196)">
+    <text x="0" y="-4" font-size="9" letter-spacing="0.7" fill="#9AA79C">PCIe RISERS</text>
+    <rect x="0"  y="2"  width="150" height="46" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="8"  y="22" font-size="11" letter-spacing="0.6" fill="#EDE7D7">extra ethernet</text>
+    <text x="8"  y="38" font-size="9" letter-spacing="0.7" fill="#9AA79C">ADDED, NOT ONBOARD</text>
+    <rect x="0"  y="56" width="150" height="46" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+    <text x="8"  y="76" font-size="11" letter-spacing="0.6" fill="#EDE7D7">Dell storage ctrl?</text>
+    <text x="8"  y="92" font-size="9" letter-spacing="0.7" fill="#9AA79C">RUNS TO THE DISKS</text>
+    <rect x="0"  y="110" width="150" height="40" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="8"  y="134" font-size="9" letter-spacing="0.7" fill="#9AA79C">FREE SLOTS? UNKNOWN</text>
+    <rect x="0"  y="158" width="150" height="40" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="8"  y="176" font-size="9" letter-spacing="0.7" fill="#9AA79C">"SECURITY PIM"</text>
+    <text x="8"  y="190" font-size="9" letter-spacing="0.7" fill="#9AA79C">NOBODY KNOWS</text>
+  </g>
+
+  <!-- onboard bits -->
+  <g transform="translate(618,406)">
+    <rect x="0" y="0" width="72" height="0" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+  </g>
+
+  <!-- rear -->
+  <g transform="translate(812,186)">
+    <rect x="0" y="0" width="76" height="80" fill="#14100a" stroke="#F5B95A" stroke-width="1.5"/>
+    <text x="38" y="34" font-size="11" letter-spacing="0.6" fill="#EDE7D7" text-anchor="middle">PSU</text>
+    <text x="38" y="50" font-size="9" letter-spacing="0.7" fill="#9AA79C"  text-anchor="middle">ODD</text>
+    <text x="38" y="62" font-size="9" letter-spacing="0.7" fill="#9AA79C"  text-anchor="middle">CONNECTOR</text>
+    <rect x="0" y="90" width="76" height="46" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="38" y="112" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">2nd PSU?</text>
+    <text x="38" y="126" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">UNKNOWN</text>
+    <rect x="0" y="146" width="76" height="52" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="38" y="166" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">BROADCOM</text>
+    <text x="38" y="180" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">ETHERNET</text>
+    <text x="38" y="192" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">PORTS</text>
+    <rect x="0" y="208" width="76" height="40" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="38" y="226" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">ONBOARD</text>
+    <text x="38" y="238" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">VIDEO (WEAK)</text>
+  </g>
+
+  <g stroke="#A594E8" stroke-width="1.3" fill="#A594E8" opacity="0.8">
+    <text x="52" y="444" font-size="9" letter-spacing="0.7" fill="#A594E8" stroke="none">COLD AIR IN AT THE FRONT, HOT AIR OUT AT THE BACK</text>
+    <path d="M52 462 H946" fill="none" stroke-dasharray="9 6"/>
+    <path d="M946 456 L960 462 L946 468 Z" stroke="none"/>
+  </g>
+
+  <!-- ═══ FRONT ══════════════════════════════════════════════════ -->
+  <text x="34" y="528" font-size="12" letter-spacing="2.1" fill="#9AA79C">FRONT · WHAT YOU SEE IN THE RACK</text>
+  <rect x="34" y="540" width="952" height="104" rx="6" fill="#0d1310" stroke="#3a4440" stroke-width="1.5"/>
+
+  <g transform="translate(52,556)">
+    <rect x="0"   y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="52"  y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <rect x="104" y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="156" y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <rect x="208" y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="260" y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <rect x="312" y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/><rect x="364" y="0" width="46" height="72" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="205" y="-6" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">EIGHT HOT-SWAP BAYS, COUNTED ON CAMERA</text>
+  </g>
+
+  <g transform="translate(490,556)">
+    <rect x="0" y="0" width="180" height="30" fill="#111a16" stroke="#6FD9A2" stroke-width="1.5"/>
+    <text x="90" y="20" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">DVD DRIVE (SATA)</text>
+    <text x="90" y="46" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">SWAPPABLE FOR AN SSD</text>
+    <rect x="0" y="56" width="180" height="16" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="90" y="68" font-size="9" letter-spacing="0.7" fill="#9AA79C" text-anchor="middle">FRONT PANEL / SERVICE TAG</text>
+  </g>
+
+  <g transform="translate(700,556)">
+    <rect x="0" y="0" width="266" height="72" fill="none" stroke="#5c6660" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="133" y="28" font-size="11" letter-spacing="0.6" fill="#EDE7D7" text-anchor="middle">PULL THE SERVICE TAG</text>
+    <text x="133" y="48" font-size="9" letter-spacing="0.7" fill="#9AA79C"  text-anchor="middle">IT NAMES THE MACHINE AND</text>
+    <text x="133" y="62" font-size="9" letter-spacing="0.7" fill="#9AA79C"  text-anchor="middle">ENDS MOST OF THESE QUESTIONS</text>
+  </g>
+
+  <text x="34" y="668" font-size="9" letter-spacing="0.7" fill="#9AA79C">EDIT THIS FILE · tech-track/server-layout.svg · SOLID = SEEN, DASHED = STILL A QUESTION</text>
+</svg>
