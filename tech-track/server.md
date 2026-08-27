@@ -4,9 +4,9 @@ The Hub has a rackmount server standing in the makerspace. This is a map of it,
 started from Bryan's walk-around on 27 August 2026 and meant to be corrected by
 whoever opens it next.
 
-The walk-around is three recordings, about five and a half minutes in total:
-the format and the method, then RAM and cache, then handling and the rest of
-the board. All three are in the Hub.
+The walk-around is five recordings, about nine and a half minutes: the format
+and the method, RAM and cache, handling and the board, PCIe and SATA, then the
+drive bays. All five are in the Hub.
 
 **Read this before you trust it.** Bryan was seeing the machine for the first
 time and said so twice: *"everything I say here, take it with a grain of salt"*
@@ -79,7 +79,7 @@ flowchart TB
           RAM["RAM 🟡<br/>looks triple channel<br/>A1·A2·A3 … B1·B2·B3"]
           NET["Network 🟡<br/>Broadcom NICs<br/>ports at the back"]
           PCIE["PCIe lanes + risers 🟡<br/>everything else plugs in here"]
-          STOR["Storage ❓<br/>nothing known"]
+          STOR["Storage 🟡<br/>backplane · 8 SAS bays<br/>+ DVD on SATA"]
         end
         PSU["PSU 🟡<br/>unfamiliar connector,<br/>feeds a lot through the board"]
       end
@@ -154,10 +154,30 @@ Everything that computes or carries data.
   working out whether one is seated or free, so that is unfinished
 - ❓ How many lanes, how many slots, what is already in them
 
-**Storage**
+**Storage** — found, and it decides what this machine is for
 
-- ❓ Entirely unknown. How many drives, what kind, whether there is a RAID
-  controller. Nothing in the recordings reaches it
+- 🟡 A **backplane**: a module carrying a stack of drives, most likely in some
+  kind of RAID array
+- 🟡 The caddies are for **SAS**, Serial Attached SCSI, which Bryan describes
+  as better than SATA
+- 🟡 **Eight drive bays**, counted on camera
+- ⚠️ **Capacity is unresolved.** He reads 500 off a drive front, which would
+  make about 4 TB across eight bays. But he then compares them to 8 TB drives
+  and says those are *56 times* bigger, which points at roughly 146 GB, a
+  common SAS size. Both cannot be right. **Read a label.**
+- 🟡 There is also a **DVD drive** on SATA, still fitted, eject button
+  reachable from the front. That port takes any SATA device, so it can become
+  an SSD or a hard disk whenever somebody wants the bay
+- ❓ How many bays are populated, and whether the RAID is configured
+
+**Expansion, in more detail**
+
+- 🟡 A PCIe generation is bandwidth plus the protocol for moving data down the
+  lanes. It keeps rising because graphics cards keep demanding it
+- 🟡 Channels are written like `PCIe 5 x16`: all sixteen channels of a gen-5
+  lane. A x16 slot can be **split**, for example into two x8, so a card
+  needing only eight does not waste the rest
+- 🟡 Everything extra attaches by **PCIe or SATA**
 
 ## 3. Cooling 🟡
 
@@ -183,20 +203,29 @@ In the order somebody could clear them.
 | 2 | Who can mount it in a rack? | open |
 | 3 | Where does it live, given the noise and no cooled room? | the house |
 | 4 | Is the RAM really triple channel, and how is it populated? | the board model, ten minutes |
-| 5 | What storage is in it? Nothing in the recordings reaches it | anyone with a screwdriver |
+| 5 | How big are the drives really, 500 GB or 146 GB? | read a label, two minutes |
 | 6 | Is that riser seated or released? | whoever opens it next |
-| 7 | What is it for? See below | the tech track |
+| 7 | How many of the eight bays are populated, and is the RAID configured? | whoever boots it |
+| 8 | What is it for? See below | the tech track |
 
 ## What it could be for
 
-Nothing here is decided. Listed so two people do not build the same half.
+Nothing here is decided, but the drive bays narrow it considerably. **Eight
+bays of SAS disks is a lot of spindles and not many terabytes.** That is a poor
+bulk storage box and a good archive one, and somebody in the room said the
+useful thing out loud: *it is Markdown files.* For a text archive four
+terabytes is enormous. The limit only bites for media or heavy relational data.
+
+Listed so two people do not build the same half.
 
 - **The thing the valley stops renting.** Everything currently depends on an
   uplink to a hosted database and an edge network. A machine in the building is
   the biggest single change available to that.
 - **A local archive node.** The same knowledge, fast and offline, on a box in
   this building. See Build 2 in the [projects index](https://github.com/Valley-of-the-Commons/projects).
-- **Permanent storage.** Build 1.
+  **This is the role the hardware actually fits.**
+- **Permanent storage.** Build 1. Possible, but the bays are the constraint:
+  this is not where a lot of terabytes live without new disks.
 - **The thing Rolling Rob and the LoRa devices talk to** when the internet is
   not there.
 
@@ -214,5 +243,7 @@ The recordings live in the Hub:
 1. **Bryan opens the server: power, signal, cooling** — 2:57
 2. **Bryan on RAM: cache, and why the slots go in threes** — 1:49
 3. **Bryan on handling RAM, the network chips, and PCIe** — 1:20
+4. **Bryan on PCIe lanes, SATA, and finding the disk backplane** — 2:37
+5. **Bryan counts the drive bays: eight, and what that is good for** — 0:44
 
 *Started 27 Aug 2026 from Bryan's walk-around, at the tech track.*
