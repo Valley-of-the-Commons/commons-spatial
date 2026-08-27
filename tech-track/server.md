@@ -4,6 +4,10 @@ The Hub has a rackmount server standing in the makerspace. This is a map of it,
 started from Bryan's walk-around on 27 August 2026 and meant to be corrected by
 whoever opens it next.
 
+The walk-around is three recordings, about five and a half minutes in total:
+the format and the method, then RAM and cache, then handling and the rest of
+the board. All three are in the Hub.
+
 **Read this before you trust it.** Bryan was seeing the machine for the first
 time and said so twice: *"everything I say here, take it with a grain of salt"*
 and *"as I talk, I'm figuring out what needs to be done"*. Everything below is
@@ -15,6 +19,23 @@ hardware with the lid off.**
 | ✅ | confirmed by someone who checked the machine |
 | 🟡 | Bryan said it while looking at it, unverified |
 | ❓ | open question, nobody knows yet |
+
+---
+
+## Before you touch it
+
+The most important thing in the recordings, and the only part that is not a
+guess. 🟡 as stated, but it is standard practice rather than a reading of this
+machine.
+
+- **Hold a RAM stick by its edges. Do not touch the gold pins.**
+- **Wear an anti-static strap.** Ground yourself first.
+- **Take your sweater off.** Static you cannot feel is enough.
+- **Do not stack sticks on each other or throw them around.**
+
+The reason, in Bryan's words: you do not want to destroy a thousand pounds of
+RAM with a spark. Everything else in this document can be got wrong and fixed.
+This cannot.
 
 ---
 
@@ -55,9 +76,10 @@ flowchart TB
           direction TB
           CPU1["CPU under a block 🟡"]
           CPU2["CPU under a block 🟡"]
-          RAM["RAM ❓ how much"]
-          STOR["Storage ❓ what and how many"]
-          NET["Network ❓ how many ports"]
+          RAM["RAM 🟡<br/>looks triple channel<br/>A1·A2·A3 … B1·B2·B3"]
+          NET["Network 🟡<br/>Broadcom NICs<br/>ports at the back"]
+          PCIE["PCIe lanes + risers 🟡<br/>everything else plugs in here"]
+          STOR["Storage ❓<br/>nothing known"]
         end
         PSU["PSU 🟡<br/>unfamiliar connector,<br/>feeds a lot through the board"]
       end
@@ -93,15 +115,49 @@ so do we.
 
 ## 2. Signal 🟡
 
-Everything that computes or carries data. Almost entirely unmapped, because the
-walk-around did not get this far before the recording ended.
+Everything that computes or carries data.
+
+**Processors**
 
 - 🟡 At least two CPUs, sitting under the cooling blocks
 - 🟡 A CPU is a square of silicon under a metal lid, pasted to the heat sink
-- ❓ RAM: how many sticks, what size, how many slots free
-- ❓ Storage: how many drives, what kind, whether there is a RAID controller
-- ❓ Network: how many ports, what speed
-- ❓ What is installed on it, if anything
+- 🟡 Modern CPUs carry L1, L2 and sometimes L3 cache, a few megabytes. It keeps
+  growing because cache is a cheap way to displace the need for RAM and it
+  lifts the performance that is still CPU-bound. It is etched onto the chip
+  itself
+- ❓ Model, core count, generation. Under the blocks, and reading it means
+  redoing thermal paste
+
+**Memory** — the most interesting reading of the session
+
+- 🟡 Normally a board is **dual channel**: you populate slots in pairs
+- 🟡 This board's slot colours run in **threes**, and the silkscreen reads
+  `A1 A2 A3` then `A4 A5 A6` then `A7 A8 A9`, with a matching `B` bank
+- 🟡 Bryan reasons from that pattern that it looks like **triple channel**:
+  populate one, two and three together rather than in pairs
+- ⚠️ He said out loud he was not certain triple channel exists. It does, on
+  some server platforms. **This is reasoning from the board, not a
+  specification**, and it is checkable in ten minutes against the board model
+- ❓ How many sticks are fitted, what size each is, how many slots are free
+- ❓ Whether it is ECC, which server RAM usually is
+
+**Network**
+
+- 🟡 The network interface chips are **Broadcom**, on the board itself
+- 🟡 Ethernet ports are at the back
+- ❓ How many, and at what speed
+
+**Expansion**
+
+- 🟡 Most of what you plug into a server goes through **PCIe lanes**
+- 🟡 There are risers, with a release catch. The recording ends with him
+  working out whether one is seated or free, so that is unfinished
+- ❓ How many lanes, how many slots, what is already in them
+
+**Storage**
+
+- ❓ Entirely unknown. How many drives, what kind, whether there is a RAID
+  controller. Nothing in the recordings reaches it
 
 ## 3. Cooling 🟡
 
@@ -126,8 +182,10 @@ In the order somebody could clear them.
 | 1 | Does it still need power cables? | whoever set it up, or whoever opens it next |
 | 2 | Who can mount it in a rack? | open |
 | 3 | Where does it live, given the noise and no cooled room? | the house |
-| 4 | What is inside: RAM, storage, network? | anyone with a screwdriver and ten minutes |
-| 5 | What is it for? See below | the tech track |
+| 4 | Is the RAM really triple channel, and how is it populated? | the board model, ten minutes |
+| 5 | What storage is in it? Nothing in the recordings reaches it | anyone with a screwdriver |
+| 6 | Is that riser seated or released? | whoever opens it next |
+| 7 | What is it for? See below | the tech track |
 
 ## What it could be for
 
@@ -151,7 +209,10 @@ name beside it. A ❓ you answered becomes a line of fact. If Bryan got somethin
 wrong, say so plainly and leave the original in the recording, which is the
 record.
 
-The recording itself is 2 minutes 57 seconds and lives in the Hub under
-**"Bryan opens the server: power, signal, cooling"**.
+The recordings live in the Hub:
+
+1. **Bryan opens the server: power, signal, cooling** — 2:57
+2. **Bryan on RAM: cache, and why the slots go in threes** — 1:49
+3. **Bryan on handling RAM, the network chips, and PCIe** — 1:20
 
 *Started 27 Aug 2026 from Bryan's walk-around, at the tech track.*
