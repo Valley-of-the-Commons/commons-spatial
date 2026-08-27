@@ -1,9 +1,13 @@
 # What is already built, and where your code goes
 
-Written for people arriving at the Valley of the Commons who want to build on
-what is here rather than beside it. It says what runs today, what is a
+Written for anyone arriving at the Valley of the Commons who would rather
+build on what is here than beside it. It says what runs today, what is a
 half-finished idea, and what is only a sentence somebody said once. Those are
-three different things and conflating them wastes your week.
+three different things and conflating them wastes a week that could have been
+spent on the interesting part.
+
+Nothing here is finished and nothing here is defended. If a piece of it is
+wrong, the useful response is a better version, not permission to write one.
 
 Status is marked honestly:
 
@@ -51,19 +55,19 @@ Obvious next pieces, none of them started:
 
 ---
 
-## 2. The Hub platform — *running*, and deliberately not open
+## 2. The Hub platform — *running*, and kept separate
 
 A private app runs the house: a programme, boards for each track, a repair
 queue pinned to the scan, a kitchen rota, an inventory of two workshops, and
 a recorder that writes down what a room said.
 
-**It is not in this repo and will not be.** It holds people's names, their
-recordings, and credentials for the people running each part of the house.
-Opening it would mean opening those. This is not caution about the code, which
-is unremarkable; it is that the code and the data are not separable enough to
-publish safely in the time available.
+**It is not in this repo.** It holds people's names, their recordings, and
+credentials for whoever is running each part of the house, and the code and
+the data are not separable enough to publish safely yet. That is a job someone
+could do, and it would be a good one.
 
-What is useful to you is the shape, so you can build against it or copy it:
+The shape is the part worth sharing, so it can be built against, argued with,
+or done better:
 
 - **Identity is a person, boards are a list.** Somebody leading two things has
   one passphrase and one passport, not two of each.
@@ -159,9 +163,10 @@ These are the pieces where a week of work changes what everything else can do.
 
 ---
 
-## House rules for anything built here
+## What this place has learned the hard way
 
-Not style preferences. Each of these was learned by getting it wrong.
+Offered rather than imposed. Each of these was learned by getting it wrong,
+and each cost more than reading it will.
 
 - **Say what you are unsure of.** Every machine reading in this system carries
   a confidence, and a guess is displayed differently from a fact. A plausible

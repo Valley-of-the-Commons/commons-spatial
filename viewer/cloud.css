@@ -1,0 +1,60 @@
+/* Styling for CommonsCloud.Pane, the drop-in map component.
+
+   Not needed if you use CommonsCloud.Viewer directly, which is what
+   example/demo.js does. Pane exists for the case where you want a canvas, a
+   pin layer and a loading line without writing them again.
+
+   Everything is a CSS variable so it can be themed without touching this
+   file. The defaults are dark because a point cloud captured indoors is dark
+   and a light page fights it. */
+.mapwrap{
+  --cc-ink:#EDE7D7;
+  --cc-dim:#9AA79C;
+  --cc-line:rgba(237,231,215,.14);
+  --cc-accent:#F5B95A;
+  --cc-ground:#060A07;
+  position:relative;overflow:hidden;line-height:0;
+  border:1px solid var(--cc-line);border-radius:12px;background:var(--cc-ground);
+}
+.mapwrap img{width:100%;height:auto;display:block}
+
+/* touch-action matters more than it looks: without it a drag on a phone
+   scrolls the page instead of turning the building, which reads as the scan
+   being broken rather than as a missing CSS property. */
+.mapwrap .cloudcanvas{
+  display:block;width:100%;height:min(66vh,560px);
+  background:var(--cc-ground);touch-action:none;cursor:grab;
+}
+.mapwrap .cloudcanvas:active{cursor:grabbing}
+
+/* Pins are HTML over the canvas, not geometry inside it: they keep your CSS,
+   stay crisp at any zoom, and remain buttons a keyboard can reach. */
+.pinlayer{position:absolute;inset:0;pointer-events:none}
+.pinlayer .pin{pointer-events:auto}
+.pin{
+  position:absolute;transform:translate(-50%,-50%);cursor:pointer;white-space:nowrap;
+  display:flex;align-items:center;gap:6px;padding:4px 9px 4px 5px;border-radius:99px;
+  border:1px solid rgba(245,185,90,.5);background:rgba(6,10,7,.8);color:var(--cc-ink);
+  font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;
+  backdrop-filter:blur(6px);
+  transition:transform .18s cubic-bezier(.2,.7,.3,1),border-color .18s;
+}
+.pin:hover,.pin.on{border-color:var(--cc-accent);transform:translate(-50%,-50%) scale(1.06)}
+.pin .dot{width:7px;height:7px;border-radius:50%;background:var(--cc-dim);flex:0 0 auto}
+.pin.has .dot{background:var(--cc-accent);box-shadow:0 0 0 3px rgba(245,185,90,.2)}
+.pin .n{color:var(--cc-accent)}
+
+.credit,.cloudnote{
+  position:absolute;padding:6px 10px;border-radius:99px;line-height:1.3;
+  background:rgba(6,10,7,.76);color:var(--cc-dim);backdrop-filter:blur(6px);
+  font:500 10px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.credit{left:12px;bottom:10px}
+.cloudnote{left:12px;top:12px;transition:opacity .5s}
+.cloudnote.gone{opacity:0}
+
+@media (prefers-reduced-motion:reduce){
+  .pin{transition:none}
+  .pin:hover,.pin.on{transform:translate(-50%,-50%)}
+}

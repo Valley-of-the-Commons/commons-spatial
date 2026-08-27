@@ -15,10 +15,11 @@ For the Hirschwangerhof scan, take the PLY from
 [Jeff-Emmett/commons-hub-3d](https://github.com/Jeff-Emmett/commons-hub-3d).
 It is not copied into this repo because it declares no licence.
 
-## What would help most
+## Where a hand would go furthest
 
-Read `SPEC.md` §6 first: those are the four places where a week of work
-changes what everything else can do. In this repo specifically:
+Read `SPEC.md` §6 first: four places where a week of work changes what
+everything else can do, and none of them are claimed. In this repo
+specifically:
 
 - **A first-person walk.** Flying between anchors works; walking does not.
   The cloud has no surfaces, so you either mesh the floor or sample a ground
@@ -30,18 +31,24 @@ changes what everything else can do. In this repo specifically:
   rather than adding a dependency here.
 - **Touch.** Pinch zoom works. Two-finger pan does not.
 
-## What this repo will not take
+## What belongs somewhere else
 
-- **A dependency in `viewer/cloud.js`.** Twelve kilobytes and no imports is
-  the point of it. Build on top in your own file.
-- **The scan itself.** Not ours to relicense.
+Not a ranking of what matters. Three things live better outside this file:
+
+- **Dependencies in `viewer/cloud.js`.** Twelve kilobytes and no imports is
+  what makes it droppable into anything, including a page with a strict
+  content policy. Build alongside it in your own file and the constraint stays
+  useful to everyone.
+- **The scan.** Jeff's to license, not this repo's to relicense.
 - **Anything reaching a live service.** No keys, no endpoints, no project
-  identifiers. This repo is public and must stay safe to publish; the Hub's
-  own instance is private for reasons set out in SPEC.md §2.
+  identifiers, so this stays safe for anyone to fork. The Hub's own instance
+  holds people's names and recordings, which is why it is separate rather than
+  secret. SPEC.md §2 says what it does, so you can build against it or build
+  your own.
 
 ## Style
 
-Match what is there. Specifically:
+Match what is there, and change it where you have a better idea. Specifically:
 
 - Comments say **why**, not what. If a line is surprising, the comment
   explains the constraint that made it that way.

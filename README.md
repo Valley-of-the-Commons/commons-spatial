@@ -4,16 +4,19 @@ A laser scan of a building, in a browser, in twelve kilobytes of JavaScript
 and no dependencies. Turn it, fly into a room, click a wall and get the
 coordinate you clicked.
 
-Built at the Commons Hub for the Valley of the Commons, where it is used to
-pin jobs onto the building they belong to. The scan is Jeff Emmett's Leica
-survey of the Hirschwangerhof: 1.9 million measured points, interiors
-included.
+Made at the Commons Hub during the Valley of the Commons, where it is used to
+pin jobs onto the building they belong to. It exists because Jeff Emmett
+scanned the Hirschwangerhof and put the survey where anyone could reach it:
+1.9 million measured points, interiors included. This is the half that turns
+that into something you can walk through, and it is yours to take further.
 
 ```
 viewer/cloud.js        the engine, ~12 KB, WebGL2, zero dependencies
+viewer/cloud.css       styling for the optional drop-in map component
 format/CHPC.md         the point cloud format, implementable in an afternoon
 tools/ply_to_chpc.py   PLY in, two levels of detail out
 example/               a standalone page, no build step
+SPEC.md                what else is built here, and where the gaps are
 ```
 
 ## Why not Three.js
@@ -34,12 +37,15 @@ the viewer is a reference implementation.
 ## Quick start
 
 ```bash
-python3 tools/ply_to_chpc.py scan.ply --out ./         # makes near + full
-python3 -m http.server -d example 8000
+python3 tools/ply_to_chpc.py scan.ply --out example/   # writes near + full
+python3 -m http.server 8000                            # from the repo root
 ```
 
-Then open `localhost:8000`. There is no build step and nothing to install
-beyond numpy and cwebp-free Python.
+Then open `localhost:8000/example/`. Serve from the root, not from `example/`:
+the page loads `../viewer/cloud.js`, and a server rooted at `example/` cannot
+reach it.
+
+No build step. numpy is the only thing to install.
 
 To try it against the Hirschwangerhof, take the PLY from
 [Jeff-Emmett/commons-hub-3d](https://github.com/Jeff-Emmett/commons-hub-3d)
@@ -77,6 +83,12 @@ are in.
 **Pins** are HTML positioned over the canvas by `v.project(worldPoint)`, not
 geometry inside it. They keep your CSS, they stay crisp at any zoom, and they
 are real buttons a keyboard can reach.
+
+**A shortcut.** `CommonsCloud.Pane(element, opts)` wires a canvas, a pin layer
+and a loading line together for you, for the common case where you want a map
+rather than a renderer. It needs `viewer/cloud.css`, or something with the
+same class names. The example does not use it, so you can see the plain
+version first.
 
 ## What it is not
 
